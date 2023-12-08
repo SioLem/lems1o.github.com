@@ -1,30 +1,43 @@
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Celsius to Fahrenheit Converter</title>
-</head>
+<html>
 <body>
-    <h1>Celsius to Fahrenheit Converter</h1>
-    <label for="celsius">Enter Celsius temperature:</label>
-    <input type="number" id="celsius" placeholder="Enter temperature" oninput="convert(this.value)">
-    <p id="result"></p>
 
-    <script>
-        function convert(celsius) {
-            // Check if the input is a valid number
-            if (!isNaN(celsius)) {
-                // Convert Celsius to Fahrenheit
-                var fahrenheit = (celsius * 9/5) + 32;
+<h1>Add two numbers</h1>
 
-                // Display the result
-                document.getElementById('result').innerHTML = celsius + ' Celsius is ' + fahrenheit.toFixed(2) + ' Fahrenheit';
-            } else {
-                // Display an error message for invalid input
-                document.getElementById('result').innerHTML = 'Please enter a valid number';
-            }
-        }
-    </script>
+<p>
+<label for="n1">First Number</label> 
+<input id="n1" name="n1" type="number" onkeyup="computesum()">
+<label for="n2">Second Number</label> 
+<input id="n2" name="n2" type="number" onkeyup="computesum()">
+
+</p>
+   
+<label for="sum" id="sumlabel">The sum is:</label>  
+<input id="sum" name="sum" type="number" readonly></input></p>
+
+<script>
+function computesum()
+{
+  var x,y;
+
+  // Retrieve the user input 
+  x = document.getElementById("n1").value*1;  // *1 Converts the result to number
+  y = document.getElementById("n2").value*1;  // to avoid having to use parseFloat
+
+  console.log(x);
+  console.log(y);
+
+  // Compute the sum
+  let z  = x+y;
+
+  // Display the result
+
+    document.getElementById("sumlabel").innerHTML='The sum of '
+       +x+' and '+y+' is:';
+    document.getElementById("sum").value=z;
+}
+   
+</script>
 </body>
 </html>
