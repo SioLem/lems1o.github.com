@@ -1,0 +1,59 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Payroll Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Simple Payroll Calculator</h1>
+
+  <label for="hoursWorked">Enter Hours Worked:</label>
+  <input type="number" id="hoursWorked" placeholder="Enter hours">
+
+  <label for="hourlyRate">Enter Hourly Rate:</label>
+  <input type="number" id="hourlyRate" placeholder="Enter rate">
+
+  <button onclick="calculatePay()">Calculate Pay</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculatePay() {
+      var hoursWorked = parseFloat(document.getElementById("hoursWorked").value) || 0;
+      var hourlyRate = parseFloat(document.getElementById("hourlyRate").value) || 0;
+
+      var totalPay = hoursWorked * hourlyRate;
+
+      document.getElementById("result").innerHTML = "Total Pay: $" + totalPay.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
