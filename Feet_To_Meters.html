@@ -38,25 +38,20 @@
     <button onclick="convertFeetToMeters()">Convert</button>
 
     <p id="result"></p>
-
     <script>
         function convertFeetToMeters() {
             // Get the input value
             var feet = document.getElementById("feetInput").value;
-
             // Check if the input is a valid number
             if (isNaN(feet)) {
                 alert("Please enter a valid number for feet.");
                 return;
             }
-
             // Perform the conversion
             var meters = feet * 0.3048;
-
             // Display the result
             document.getElementById("result").innerHTML = feet + " feet is equal to " + meters.toFixed(2) + " meters.";
         }
     </script>
-
 </body>
 </html>
