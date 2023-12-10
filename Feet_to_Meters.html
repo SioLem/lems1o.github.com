@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Length Converter</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0; /* Optional background color */
+    }
+
+    .home-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #85c2ff; /* Change to dark blue color */
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    header {
+      background-color: #3498db; /* Change to blue color */
+      color: white;
+      padding: 10px 0;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1, label, input, select, button, #result {
+      margin-bottom: 10px;
+    }
+
+    select {
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #FFFFFF; /* Green background color */
+      color: black;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #result {
+      font-weight: bold;
+    }
+  </style>
+
+  <header>
+    <div class="header-content">
+      <!-- You can add a logo or website title here -->
+      <h1>My Awesome Website</h1>
+      
+      <!-- Home button -->
+      <a href="index.html" class="home-button">Home</a>
+    </div>
+  </header>
+</head>
+<body>
+
+  <h1>Length Converter</h1>
+
+  <label for="length">Enter length:</label>
+  <input type="number" id="length" placeholder="Enter length">
+
+  <label for="conversion-type">Select conversion:</label>
+  <select id="conversion-type">
+    <option value="meters-to-feet">Meters to Feet</option>
+    <option value="feet-to-meters">Feet to Meters</option>
+  </select>
+
+  <!-- Calculate button -->
+  <button onclick="convertLength()">Convert</button>
+
+  <!-- Result display -->
+  <div id="result"></div>
+
+  <script>
+    function convertLength() {
+      var length = parseFloat(document.getElementById("length").value) || 0;
+      var conversionType = document.getElementById("conversion-type").value;
+
+      if (conversionType === "meters-to-feet") {
+        var feet = length * 3.28084;
+        document.getElementById("result").innerHTML = length + " meters is " + feet.toFixed(2) + " feet.";
+      } else if (conversionType === "feet-to-meters") {
+        var meters = length / 3.28084;
+        document.getElementById("result").innerHTML = length + " feet is " + meters.toFixed(2) + " meters.";
+      }
+    }
+  </script>
+</body>
+</html>
