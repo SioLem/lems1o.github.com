@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator</title>
+  <style>
+    body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Optional background color */
+    }
+
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #85c2ff; /* Change to dark blue color */
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        header {
+            background-color: #3498db; /* Change to blue color */
+            color: white;
+            padding: 10px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+    h1, label, input, button, #result {
+      margin-bottom: 10px;
+    }
+
+    input {
+      padding: 5px;
+    }
+
+    button {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    #result {
+      font-weight: bold;
+    }
+    #calculate-button {
+    padding: 10px 20px;
+    background-color: #FFFFFF; /* Change to white */
+    color: black; /* Change text color to black for better visibility */
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+  </style>
+    <header>
+        <div class="header-content">
+            <!-- You can add a logo or website title here -->
+            <h1>My Awesome Website</h1>
+            
+            <!-- Home button -->
+            <a href="index.html" class="home-button">Home</a>
+        </div>
+    </header>
+<body>
+
+  <h1>Income Tax Calculator</h1>
+
+  <label for="income">Enter Income:</label>
+  <input type="number" id="income" placeholder="Enter your income">
+
+  <label for="deductions">Enter Deductions:</label>
+  <input type="number" id="deductions" placeholder="Enter your deductions">
+
+  <button onclick="calculateTax()">Calculate Tax</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateTax() {
+      var income = parseFloat(document.getElementById("income").value) || 0;
+      var deductions = parseFloat(document.getElementById("deductions").value) || 0;
+
+      // Basic tax calculation (this is a simplified example)
+      var taxableIncome = income - deductions;
+      var tax = calculateBasicTax(taxableIncome);
+
+      document.getElementById("result").innerHTML = "Tax to be paid: $" + tax.toFixed(2);
+    }
+
+    function calculateBasicTax(taxableIncome) {
+      // This is a simplified tax calculation, you should replace it with the actual tax calculation logic
+      // This example assumes a flat tax rate
+      var taxRate = 0.15;
+      var tax = taxableIncome * taxRate;
+      return tax;
+    }
+  </script>
+</body>
+</html>
