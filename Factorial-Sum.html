@@ -1,0 +1,111 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factorial Calculator</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0; /* Optional background color */
+    }
+
+    .home-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #85c2ff; /* Change to dark blue color */
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    header {
+      background-color: #3498db; /* Change to blue color */
+      color: white;
+      padding: 10px 0;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h1, label, input, button, #result {
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #FFFFFF; /* Green background color */
+      color: black;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #result {
+      font-weight: bold;
+    }
+  </style>
+
+  <header>
+    <div class="header-content">
+      <!-- You can add a logo or website title here -->
+      <h1>My Awesome Website</h1>
+      
+      <!-- Home button -->
+      <a href="index.html" class="home-button">Home</a>
+    </div>
+  </header>
+</head>
+<body>
+
+  <h1>Factorial Calculator</h1>
+
+  <label for="n">Enter a number:</label>
+  <input type="number" id="n" placeholder="Enter a number">
+
+  <!-- Calculate button -->
+  <button onclick="calculateOperations()">Calculate</button>
+
+  <!-- Result display -->
+  <div id="result"></div>
+
+  <script>
+    function calculateOperations() {
+      var n = parseInt(document.getElementById("n").value) || 0;
+
+      // Factorial using while loop
+      var factorial = 1;
+      var i = 1;
+      while (i <= n) {
+        factorial *= i;
+        i++;
+      }
+
+      // Sum using do-while loop
+      var sum = 0;
+      var j = 1;
+      do {
+        sum += j;
+        j++;
+      } while (j <= n);
+
+      // Average using for loop
+      var total = 0;
+      for (var k = 1; k <= n; k++) {
+        total += k;
+      }
+      var average = total / n;
+
+      document.getElementById("result").innerHTML = "Factorial: " + factorial + "<br>Sum: " + sum + "<br>Average: " + average.toFixed(2);
+    }
+  </script>
+</body>
+</html>
