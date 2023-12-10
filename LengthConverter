@@ -87,7 +87,6 @@
 
   <!-- Result display -->
   <div id="result"></div>
-
   <script>
     function convertLength() {
       var length = parseFloat(document.getElementById("length").value) || 0;
