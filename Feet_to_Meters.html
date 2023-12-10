@@ -92,7 +92,6 @@
     function convertLength() {
       var length = parseFloat(document.getElementById("length").value) || 0;
       var conversionType = document.getElementById("conversion-type").value;
-
       if (conversionType === "meters-to-feet") {
         var feet = length * 3.28084;
         document.getElementById("result").innerHTML = length + " meters is " + feet.toFixed(2) + " feet.";
