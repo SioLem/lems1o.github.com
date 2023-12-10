@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,17 +6,43 @@
   <title>Simple Payroll Calculator</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Optional background color */
+            
     }
 
-    label {
-      display: block;
-      margin-bottom: 5px;
+        .home-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #85c2ff; /* Change to dark blue color */
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        header {
+            background-color: #3498db; /* Change to blue color */
+            color: white;
+            padding: 10px 0;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+    h1, label, input, button, #result {
+      margin-bottom: 10px;
     }
 
     input {
-      margin-bottom: 10px;
+      padding: 5px;
     }
 
     button {
@@ -25,11 +51,18 @@
     }
 
     #result {
-      margin-top: 20px;
       font-weight: bold;
     }
   </style>
-</head>
+    <header>
+        <div class="header-content">
+            <!-- You can add a logo or website title here -->
+            <h1>My Awesome Website</h1>
+            
+            <!-- Home button -->
+            <a href="index.html" class="home-button">Home</a>
+        </div>
+    </header>
 <body>
 
   <h1>Simple Payroll Calculator</h1>
@@ -54,5 +87,7 @@
       document.getElementById("result").innerHTML = "Total Pay: $" + totalPay.toFixed(2);
     }
   </script>
+    
 </body>
 </html>
+
